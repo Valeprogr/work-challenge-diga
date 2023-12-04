@@ -7,8 +7,6 @@ import NewDoctor from './NewDoctor';
 
 
 function App() {
-
-
   return (
     <>
       <BrowserRouter>

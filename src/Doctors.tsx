@@ -8,7 +8,6 @@ import { IDoctor } from "./types/doctor";
 const Doctors = () => {
     const [pageNumber, setPageNumber] = useState(1)
     const { doctors, hasMore, loading, error } = useFetch(pageNumber)
-    console.log(doctors)
     const observer = useRef<IntersectionObserver | null>(null);
     const lastDoctorElemtRef = useCallback((node: any) => {
         if (loading) return
@@ -19,13 +18,12 @@ const Doctors = () => {
             }
         })
         if (node) observer.current.observe(node)
-        console.log(node)
     }, [loading, hasMore])
     const scrollDownHandler = (e: any) => {
         setPageNumber(1)
     }
 
-    const deleteDoctorHandeler  = async (id: number) => {
+    const deleteDoctorHandeler = async (id: number) => {
         try {
             const res = await fetch(`${import.meta.env.VITE_API_URL}/api/doctors/${id}`, {
                 method: 'DELETE',
@@ -105,20 +103,15 @@ const Doctors = () => {
                                         {ele.phone}
                                     </td>
                                     <td className="px-6 py-4">
-                                        <button className="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick ={() => deleteDoctorHandeler(Number(ele.id))}>DELETE</button>
+                                        <button className="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={() => deleteDoctorHandeler(Number(ele.id))}>DELETE</button>
                                     </td>
                                 </tr>
                             }
                         })
                         }
-
-
                     </tbody>
                 </table>
             </div>
-
-
-
             <div>{loading && 'Loading ...'}</div>
             <div>{error && 'Error'}</div>
         </div>

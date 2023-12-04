@@ -1,5 +1,5 @@
 export type IDoctor = {
-    id?: string,
+    id?: number,
     name: string,
     street: string,
     city: string,

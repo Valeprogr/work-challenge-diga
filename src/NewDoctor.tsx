@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const NewDoctor = () => {
     //Fai POST request 
-    const [data, setData] = useState({
+    const [data, setData] = useState<IDoctor>({
         id: 0,
         name: "",
         email: "",
@@ -61,86 +61,93 @@ const NewDoctor = () => {
                     <h1 className="text-2xl font-medium my-4">Add New Doctor : </h1>
                     <div className="flex mb-4 items-end  justify-between">
                         <label className=" text-gray-700 text-sm font-bold mb-2 " htmlFor="email">
-                            Email:
+                            Email
                         </label>
                         <input
                             type="email"
                             name="email"
-                            className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="ml-2 shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={data.email}
                             onChange={onchangeHandler}
+                            placeholder="example@gmail.com"
                         />
                     </div>
                     <div className="flex mb-4 items-end justify-between">
                         <label className=" text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-                            Name :
+                            Name 
                         </label>
                         <input
                             type="text"
                             name="name"
-                            className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="ml-2 shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={data.name}
                             onChange={onchangeHandler}
+                            placeholder="Jake"
                         />
                     </div>
                     <div className="flex mb-4 items-end justify-between">
                         <label className=" text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
-                            Phone :
+                            Phone 
                         </label>
                         <input
                             type="text"
                             name="phone"
-                            className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="ml-2 shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={data.phone}
                             onChange={onchangeHandler}
+                            placeholder="+49 17867****"
                         />
                     </div>
                     <div className="flex mb-4 items-end justify-between">
                         <label className=" text-gray-700 text-sm font-bold mb-2" htmlFor="street">
-                            Street :
+                            Street 
                         </label>
                         <input
                             type="text"
                             name="street"
-                            className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="ml-2 shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={data.street}
                             onChange={onchangeHandler}
+                            placeholder="Unter den Linden n. 17"
                         />
                     </div>
                     <div className="flex mb-4 items-end justify-between">
                         <label className=" text-gray-700 text-sm font-bold mb-2" htmlFor="city">
-                            City :
+                            City 
                         </label>
                         <input
                             type="text"
                             name="city"
-                            className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="ml-2 shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={data.city}
                             onChange={onchangeHandler}
+                            placeholder="München"
                         />
                     </div>
                     <div className="flex mb-4 items-end justify-between">
                         <label className=" text-gray-700 text-sm font-bold mb-2" htmlFor="state">
-                            State :
+                            State 
                         </label>
                         <input
                             type="text"
                             name="state"
-                            className="shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="ml-2 shadow appearance-none border rounded w-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={data.state}
                             onChange={onchangeHandler}
+                            placeholder="Bayern"
                         />
                     </div>
                     <div className="flex mb-4 items-end justify-between">
                         <label className=" text-gray-700 text-sm font-bold mb-2 " htmlFor="zip">
-                            Zip :
+                            Zip 
                         </label>
                         <input
                             type="text"
                             name="zip"
-                            className=" shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="ml-2 shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             value={data.zip}
                             onChange={onchangeHandler}
+                            placeholder="1796"
                         />
                     </div>
                     <button className="bg-purple-500 hover:bg-purple-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Create</button>
