@@ -31,6 +31,6 @@ It allows you to delete a doctor to the list of doctors with id.
 
 4. Run the app
 
-   npm start
+   npm run dev
 
 5. Open http://localhost:5173/ to view it in the browser.
