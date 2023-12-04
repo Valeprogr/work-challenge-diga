@@ -1,5 +1,5 @@
 import useFetch from "./hooks/useFetch";
-import React, { useCallback, useEffect, useState, useRef, MouseEventHandler } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import { IDoctor } from "./types/doctor";
 
 
